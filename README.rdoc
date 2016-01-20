@@ -8,22 +8,14 @@ Executar rails bundler install
 
 Configurar arquivo db/database.yml
 
-Executar   
+Executar:
 
-```
 rake db:create && db:migrate
 
-```
+Executar:    
 
-Executar   
+rake db:seed   
 
-```
-rake db:seed
+E depois iniciar servidor com:      
 
-```
-E depois iniciar servidor com   
-
-```
 rails s
-
-```
