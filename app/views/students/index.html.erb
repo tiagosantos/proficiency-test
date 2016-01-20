@@ -17,7 +17,7 @@
   <tbody>
     <% @students.each do |student| %>
       <tr>
-        <td><a href="/students/<%= student.id %>"><%= student.id %></a></td>
+        <td><strong><%= student.id %></strong></td>
         <td><%= student.name %></td>
         <td><%= student.register_number %></td>
         <td><%= student.status %></td>

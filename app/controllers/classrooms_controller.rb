@@ -2,7 +2,6 @@ class ClassroomsController < ApplicationController
   before_action :set_classroom, only: [:show, :edit, :update, :destroy]
 
   # GET /classrooms
-  # GET /classrooms.json
   def index
     @classrooms = Classroom.all
     @students = Student.all
@@ -10,7 +9,6 @@ class ClassroomsController < ApplicationController
   end
 
   # GET /classrooms/1
-  # GET /classrooms/1.json
   def show
     @classrooms = Classroom.all
     @students = Student.all
@@ -33,7 +31,6 @@ class ClassroomsController < ApplicationController
   end
 
   # POST /classrooms
-  # POST /classrooms.json
   def create
     @classroom = Classroom.new(classroom_params)
     @classroom.entry_at = Time.now

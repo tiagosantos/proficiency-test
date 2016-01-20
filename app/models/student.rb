@@ -1,9 +1,7 @@
 class Student < ActiveRecord::Base
-
-    validates :name, :status, :register_number,  presence: true
-    has_one :class_room
-
-
+	has_many :classrooms, :dependent => :destroy
+    validates :name, :register_number, :status, presence: true
+    
     def self.search(query)
     	where("name like ?","%#{query}%")
     end

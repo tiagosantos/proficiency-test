@@ -17,10 +17,10 @@
   <tbody>
     <% @classrooms.each do |classroom| %>
       <tr>
-        <td><a href="/classrooms/<%= classroom.id %>"><%= classroom.id %></a></td>
+        <td><strong><%= classroom.id %></strong></td>
         <td><%= classroom.student.name %></td>
         <td><%= classroom.course.name %></td>
-        <td><%= classroom.entry_at %></td>
+        <td><%= classroom.entry_at.strftime("%d/%m/%Y - %H:%M:%S") %></td>
         <td><div class="btn-group">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                <i class="fa fa-cog"></i> <span class="caret"></span>

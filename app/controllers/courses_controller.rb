@@ -2,16 +2,9 @@ class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
   # GET /courses
-  # GET /courses.json
   def index
     @courses = Course.all
     @coursestatuses = CourseStatus.all
-  end
-
-  # GET /courses/1
-  # GET /courses/1.json
-  def show
-     @coursestatuses = CourseStatus.all
   end
 
   # GET /courses/new
@@ -26,7 +19,6 @@ class CoursesController < ApplicationController
   end
 
   # POST /courses
-  # POST /courses.json
   def create
     @course = Course.new(course_params)
 
@@ -52,7 +44,6 @@ class CoursesController < ApplicationController
   end
 
   # DELETE /courses/1
-  # DELETE /courses/1.json
   def destroy
     @course.destroy
     respond_to do |format|
