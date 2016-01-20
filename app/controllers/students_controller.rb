@@ -7,9 +7,9 @@ class StudentsController < ApplicationController
     @students = Student.all
     @studentstatuses = StudentStatus.all
     if params[:search]
-      @products = Product.search(params[:search]).page(params[:page]).order(amount: :desc)
+      @students = Student.search(params[:search]).order(name: :desc)
     else
-      @products = Product.page(params[:page]).order(amount: :desc)
+      @students = Student.order(name: :desc)
     end
   end
 
