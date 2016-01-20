@@ -1,28 +1,24 @@
-== README
+== Proficiency test
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Projeto desenvolvido como teste de admissão para Internet Sistemas.
 
-Things you may want to cover:
+=== Instalação
 
-* Ruby version
+Executar rails bundler install
 
-* System dependencies
+Configurar arquivo db/database.yml
 
-* Configuration
+Executar 
 
-* Database creation
+```
+rake db:create && db:migrate
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Executar 
+```
+rake db:seed
+```
+E depois iniciar servidor com 
+```
+rails s
+```
