@@ -5,20 +5,24 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     @students = Student.all
+    @studentstatuses = StudentStatus.all
   end
 
   # GET /students/1
   # GET /students/1.json
   def show
+    @studentstatuses = StudentStatus.all
   end
 
   # GET /students/new
   def new
     @student = Student.new
+    @studentstatuses = StudentStatus.all
   end
 
   # GET /students/1/edit
   def edit
+    @studentstatuses = StudentStatus.all
   end
 
   # POST /students
@@ -32,7 +36,6 @@ class StudentsController < ApplicationController
         format.json { render :show, status: :created, location: @student }
       else
         format.html { render :new }
-        format.json { render json: @student.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -46,7 +49,6 @@ class StudentsController < ApplicationController
         format.json { render :show, status: :ok, location: @student }
       else
         format.html { render :edit }
-        format.json { render json: @student.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,7 +59,6 @@ class StudentsController < ApplicationController
     @student.destroy
     respond_to do |format|
       format.html { redirect_to students_url, notice: 'student removida com sucesso.' }
-      format.json { head :no_content }
     end
   end
 

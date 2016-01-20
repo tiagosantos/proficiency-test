@@ -5,20 +5,24 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses = Course.all
+    @coursestatuses = CourseStatus.all
   end
 
   # GET /courses/1
   # GET /courses/1.json
   def show
+     @coursestatuses = CourseStatus.all
   end
 
   # GET /courses/new
   def new
     @course = Course.new
+     @coursestatuses = CourseStatus.all
   end
 
   # GET /courses/1/edit
   def edit
+     @coursestatuses = CourseStatus.all
   end
 
   # POST /courses
