@@ -4,22 +4,23 @@ class CoursesController < ApplicationController
   # GET /courses
   def index
     @courses = Course.all
-    @coursestatuses = CourseStatus.all
+    @coursestatus = CourseStatus.all
   end
 
   # GET /courses/new
   def new
     @course = Course.new
-    @coursestatuses = CourseStatus.all
+    @coursestatus = CourseStatus.all
   end
 
   # GET /courses/1/edit
   def edit
-     @coursestatuses = CourseStatus.all
+     @coursestatus = CourseStatus.all
   end
 
   # POST /courses
   def create
+    @coursestatus = CourseStatus.all
     @course = Course.new(course_params)
 
     respond_to do |format|
@@ -34,6 +35,7 @@ class CoursesController < ApplicationController
   # PATCH/PUT /courses/1
   # PATCH/PUT /courses/1.json
   def update
+    @coursestatus = CourseStatus.all
     respond_to do |format|
       if @course.update(course_params)
         format.html { redirect_to courses_url, notice: 'course atualizada com sucesso.' }
@@ -45,6 +47,7 @@ class CoursesController < ApplicationController
 
   # DELETE /courses/1
   def destroy
+    @coursestatus = CourseStatus.all
     @course.destroy
     respond_to do |format|
       format.html { redirect_to courses_url, notice: 'course removida com sucesso.' }

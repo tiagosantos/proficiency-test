@@ -1,5 +1,5 @@
 class Course < ActiveRecord::Base
-	has_many :classrooms, :dependent => :destroy
-    validates :status, presence: true
-    validates :name, :description, presence: true, length: { maximum: 45 }
+	has_many :classrooms, :dependent => :destroy 
+    validates :status, presence:  { message: " é obrigatório" }
+    validates :name, :description, presence:  { message: " é obrigatório" }, length: { maximum: 45 }
 end
