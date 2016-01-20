@@ -1,0 +1,39 @@
+<h2>Estudantes</h2>
+  <div class="col-md-12 white-bg well">
+  <a href="/students/new" class="btn btn-success">
+      Novo Estudante <i class="fa fa-plus"> </i></a>
+    <hr>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Registro Nº</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><a href="/students/<%= student.id %>"><%= student.id %></a></td>
+        <td><%= student.name %></td>
+        <td><%= student.register_number %></td>
+        <td><%= student.status %></td>
+        <td><div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <i class="fa fa-cog"></i> <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">       
+              <li><%= link_to edit_student_path(student) do %><i class="fa fa-pencil-square-o"></i><% end %></li>
+              <li role="separator" class="divider"></li>
+              <li><%= link_to  student, method: :delete, data: { confirm: 'Você tem certeza?' } do %><i class="fa fa-trash"></i><% end %></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+     <% end %>
+  </tbody>
+</table>
+</div>
