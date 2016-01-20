@@ -1,7 +1,7 @@
 <%= form_for(@classroom) do |f| %>
   <% if @classroom.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@classroom.errors.count, "error") %> esta matrícula não pode ser salva:</h2>
+      <h2><%= pluralize(@classroom.errors.count, "erro") %> esta matrícula não pode ser salva:</h2>
 
       <ul>
       <% @classroom.errors.full_messages.each do |message| %>
