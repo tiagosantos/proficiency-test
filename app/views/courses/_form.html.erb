@@ -18,7 +18,7 @@
     <%= f.label :description %><br>
     <%= f.text_field :description, :class =>  "form-control input-md" %>
     <%= f.label :status %><br>
-    <%= collection_select(:course,:status,@coursestatuses,:id,:name, {}, {:class=>'form-control form-group'}) %>
+    <%= collection_select(:course,:status,@coursestatuses,:id,:name,  {prompt: true}, {:class=>'form-control form-group'}) %>
 
   </div>
 </div>

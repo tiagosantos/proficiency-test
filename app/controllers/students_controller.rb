@@ -26,11 +26,12 @@ class StudentsController < ApplicationController
 
   # POST /students
   def create
+    @studentstatuses = StudentStatus.all
     @student = Student.new(student_params)
 
     respond_to do |format|
       if @student.save
-        format.html { redirect_to students_url, notice: 'Estudante criada com sucesso.' }
+        format.html { redirect_to students_url, notice: 'Estudante criado com sucesso.' }
       else
         format.html { render :new }
       end
@@ -39,9 +40,10 @@ class StudentsController < ApplicationController
 
   # PATCH/PUT /students/1
   def update
+    @studentstatuses = StudentStatus.all
     respond_to do |format|
       if @student.update(student_params)
-        format.html { redirect_to students_url, notice: 'Estudante atualizada com sucesso.' }
+        format.html { redirect_to students_url, notice: 'Estudante atualizado com sucesso.' }
       else
         format.html { render :edit }
       end
@@ -50,9 +52,10 @@ class StudentsController < ApplicationController
 
   # DELETE /students/1
   def destroy
+    @studentstatuses = StudentStatus.all
     @student.destroy
     respond_to do |format|
-      format.html { redirect_to students_url, notice: 'Estudante apagada com sucesso!' }
+      format.html { redirect_to students_url, notice: 'Estudante apagado com sucesso!' }
     end
   end
 
