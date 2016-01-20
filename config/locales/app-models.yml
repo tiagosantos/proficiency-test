@@ -1,0 +1,24 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      student: Estudante
+      course: Cursos
+      classroom: "Matrícula" 
+    attributes:
+      student:
+        name: "Nome"
+        register_number: "Número de registro"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+      course:
+        name: "Nome"
+        description: "Descrição"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+      classroom:
+        entry_at: "Matriculado em"
+        course_id: "Curso"
+        student_id: "Estudante"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
