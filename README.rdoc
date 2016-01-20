@@ -19,3 +19,5 @@ rake db:seed
 E depois iniciar servidor com:      
 
 rails s
+
+[Veja no ar](https://intense-fortress-48225.herokuapp.com/)
