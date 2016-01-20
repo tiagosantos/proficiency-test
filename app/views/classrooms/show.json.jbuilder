@@ -1,0 +1,1 @@
+json.extract! @student, :id, :name, :address, :district, :city, :state, :zipcode, :nationality, :father_student, :mother_student, :responsible_student, :email, :education, :works, :occupation, :sex, :birth_date, :correspondence, :phone_house, :phone_student, :phone_responsible, :phone_responsible_type, :created_at, :updated_at
