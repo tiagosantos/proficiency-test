@@ -6,6 +6,11 @@ class StudentsController < ApplicationController
   def index
     @students = Student.all
     @studentstatuses = StudentStatus.all
+    if params[:search]
+      @products = Product.search(params[:search]).page(params[:page]).order(amount: :desc)
+    else
+      @products = Product.page(params[:page]).order(amount: :desc)
+    end
   end
 
   # GET /students/1
